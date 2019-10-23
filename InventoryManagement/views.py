@@ -142,6 +142,9 @@ def home(request):
                                              'FaultRate_3':FaultRate_3,
                                              'PageFault_4':PageFault_4,
                                              'FaultRate_4':FaultRate_4,   
+                                             'products':products,
+                                             'customers':customers,
+
         })
 
     else:

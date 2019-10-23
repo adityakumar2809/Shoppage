@@ -52,7 +52,7 @@
                     <li><a href="#why-us">Shop 1</a></li>
                     <li><a href="#services">Shop 2</a></li>
                     <li><a href="#portfolio">Shop 3</a></li>
-                    <li><a href="#temp">Shop 4</a></li>
+                    <li><a href="#testimonials">Shop 4</a></li>
                     <li><a href="#team">Team</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
@@ -71,13 +71,33 @@
 
             <div class="intro-img">
                 <!-- <img src="{% static 'img/intro-img.svg' %}" alt="" class="img-fluid"> -->
-                <form method="post">
-                    {% csrf_token %}
-                    <span style="color: white;">Number of Frames</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{form.frames}}<br><br><br>
-                    <span style="color: white;">Number of Products</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{form.products}}<br><br><br>
-                    <span style="color: white;">Number of Customers</span>: &nbsp;&nbsp;&nbsp;{{form.customers}}<br><br><br>
-                    <center><button type="submit" class="btn btn-primary">Submit</button></center>
-                </form>
+                <div class="card text-white mb-3 ml-3" style="max-width: 20rem; float: right; background: #135eb5;">
+                    <center>
+                        <div class="card-body" style="border-radius:20px;">
+                            <h5 class="card-title">Put the Numbers Here!!</h5>
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Number of Frames</label>
+                                    <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                     -->{{form.frames}}
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Number of Products</label>
+                                    <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                     -->{{form.products}}
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Number of Customers</label>
+                                    <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                         -->{{form.customers}}
+                                </div>
+                                <center><button type="submit" class="btn btn-primary">Submit</button></center>
+                            </form>
+
+                        </div>
+                    </center>
+                </div>
             </div>
 
             <div class="intro-info">
@@ -90,6 +110,7 @@
 
         </div>
     </section>
+
     <!-- #intro -->
 
     <main id="main">
@@ -219,17 +240,17 @@
 
                     <div class="col-lg-3 col-6 text-center">
                         <span data-toggle="counter-up">{{FaultRate_1}}</span>
-                        <p>Fault Rate</p>
+                        <p>Fault Rate (%)</p>
                     </div>
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">421</span>
-                        <p>Projects</p>
+                        <span data-toggle="counter-up">{{products}}</span>
+                        <p>Products</p>
                     </div>
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">18</span>
-                        <p>Clients</p>
+                        <span data-toggle="counter-up">{{customers}}</span>
+                        <p>Customers</p>
 
                     </div>
 
@@ -297,17 +318,17 @@
 
                     <div class="col-lg-3 col-6 text-center">
                         <span data-toggle="counter-up">{{FaultRate_2}}</span>
-                        <p>Fault Rate</p>
+                        <p>Fault Rate (%)</p>
                     </div>
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">781</span>
-                        <p>Projects</p>
+                        <span data-toggle="counter-up">{{products}}</span>
+                        <p>Products</p>
                     </div>
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">22</span>
-                        <p>Clients</p>
+                        <span data-toggle="counter-up">{{customers}}</span>
+                        <p>Customers</p>
                     </div>
 
                 </div>
@@ -332,7 +353,7 @@
         <!--==========================
                   LRU
     ============================-->
-        <section id="portfolio " class="wow fadeIn ">
+        <!-- <section id="portfolio " class="wow fadeIn ">
             <div class="container ">
                 <header class="section-header ">
                     <h3>AmericasBest</h3>
@@ -390,7 +411,7 @@
 
                     <div class="col-lg-3 col-6 text-center ">
                         <span data-toggle="counter-up ">409</span>
-                        <p>Projects</p>
+                        <p>Products</p>
                     </div>
 
                     <div class="col-lg-3 col-6 text-center ">
@@ -401,13 +422,165 @@
                 </div>
 
             </div>
-        </section>
+        </section> -->
         <br>
+        <section id="portfolio" class="wow fadeIn">
+            <div class="container">
+                <header class="section-header">
+                    <h3>Sublime</h3>
+                    <p>Case Study : Second Chance </p>
+                </header>
+
+                <div class="row row-eq-height justify-content-center">
+
+                    <div class="col-lg-4 mb-4">
+                        <div class="card wow bounceInUp">
+                            <i class="fa fa-diamond"></i>
+                            <div class="card-body">
+                                <h5 class="card-title">Brand Value</h5>
+                                <p class="card-text">Best Known Throughout India</p>
+                                <a href="#" class="readmore">Read more </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <div class="card wow bounceInUp">
+                            <i class="fa fa-language"></i>
+                            <div class="card-body">
+                                <h5 class="card-title">Wide Spread</h5>
+                                <p class="card-text">Accross all states and union territories of India</p>
+                                <a href="#" class="readmore">Read more </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <div class="card wow bounceInUp">
+                            <i class="fa fa-object-group"></i>
+                            <div class="card-body">
+                                <h5 class="card-title">Easy to Locate</h5>
+                                <p class="card-text">Big Branding and Commercial Locations</p>
+                                <a href="#" class="readmore">Read more </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row counters">
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">{{PageFault_3}}</span>
+                        <p>Page Fault</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">{{FaultRate_3}}</span>
+                        <p>Fault Rate (%)</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">{{products}}</span>
+                        <p>Products</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">{{customers}}</span>
+                        <p>Customers</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <div class="bg-img2">
+        </div>
+        <div class="bg-img2">
+            <br><br><br><br><br><br><br><br><br>
+            <h1>
+                <center>
+                    <font color="black"> Next Up </font>
+                </center>
+            </h1><br><br><br><br><br><br><br><br>
+        </div>
+
+        <section id="portfolio" class="wow fadeIn">
+            <div class="container" id="testimonials">
+                <header class="section-header">
+                    <h3>Sublime</h3>
+                    <p>Case Study : Second Chance </p>
+                </header>
+
+                <div class="row row-eq-height justify-content-center">
+
+                    <div class="col-lg-4 mb-4">
+                        <div class="card wow bounceInUp">
+                            <i class="fa fa-diamond"></i>
+                            <div class="card-body">
+                                <h5 class="card-title">Brand Value</h5>
+                                <p class="card-text">Best Known Throughout India</p>
+                                <a href="#" class="readmore">Read more </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <div class="card wow bounceInUp">
+                            <i class="fa fa-language"></i>
+                            <div class="card-body">
+                                <h5 class="card-title">Wide Spread</h5>
+                                <p class="card-text">Accross all states and union territories of India</p>
+                                <a href="#" class="readmore">Read more </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <div class="card wow bounceInUp">
+                            <i class="fa fa-object-group"></i>
+                            <div class="card-body">
+                                <h5 class="card-title">Easy to Locate</h5>
+                                <p class="card-text">Big Branding and Commercial Locations</p>
+                                <a href="#" class="readmore">Read more </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row counters">
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">{{PageFault_4}}</span>
+                        <p>Page Fault</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">{{FaultRate_4}}</span>
+                        <p>Fault Rate (%)</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">{{products}}</span>
+                        <p>Products</p>
+                    </div>
+
+                    <div class="col-lg-3 col-6 text-center">
+                        <span data-toggle="counter-up">{{customers}}</span>
+                        <p>Customers</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
 
         <!--==========================
       Clients Section
     ============================-->
-        <section id="testimonials " class="section-bg ">
+        <!-- <section id="testimonials " class="section-bg ">
             <div class="container ">
 
                 <header class="section-header ">
@@ -462,13 +635,71 @@
 
 
             </div>
+        </section> -->
+        <!-- #testimonials -->
+
+        <section id="testimonials" class="section-bg">
+            <div class="container">
+
+                <header class="section-header">
+                    <h3>Testimonials</h3>
+                </header>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+
+                        <div class="owl-carousel testimonials-carousel wow fadeInUp">
+
+                            <div class="testimonial-item">
+                                <img src="{% static 'img/testimonial-1.jpg' %}" class="testimonial-img" alt="">
+                                <h3>Saul Goodman</h3>
+                                <h4>Ceo &amp; Founder</h4>
+                                <p>
+                                    Perfect Algorithm to Increase my sales !
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="{% static 'img/testimonial-2.jpg' %}" class="testimonial-img" alt="">
+                                <h3>Sara Wilsson</h3>
+                                <h4>Designer</h4>
+                                <p>
+                                    Extremely Satisfied.
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="{% static 'img/testimonial-3.jpg' %}" class="testimonial-img" alt="">
+                                <h3>Jena Karlis</h3>
+                                <h4>Store Owner</h4>
+                                <p>
+                                    Our Sales have been soaring so high.
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <img src="{% static 'img/testimonial-5.jpg' %}" class="testimonial-img" alt="">
+                                <h3>John Larson</h3>
+                                <h4>Entrepreneur</h4>
+                                <p>
+                                    I can finally pursue my passion.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
         </section>
         <!-- #testimonials -->
 
         <!--==========================
       Team Section
     ============================-->
-        <section id="team ">
+        <!-- <section id="team ">
             <div class="container ">
                 <div class="section-header ">
                     <h3>Team</h3>
@@ -552,86 +783,154 @@
                 </div>
 
             </div>
-        </section>
+        </section> -->
         <!-- #team -->
 
-        <!--==========================
-      Clients Section
-    ============================-->
-        <section id="clients " class="section-bg ">
-
-            <div class="container ">
-
-                <div class="section-header ">
-                    <h3>Results</h3>
-                    <p>Comparing all the companies, we find</p>
-                </div>
-                <center><a href="result.html " class="btn btn-primary ">Results Page</a> </center>
-
-
-
-            </div>
-
-        </section>
-
-        <!--==========================
-      Contact Section
-    ============================-->
-        <section id="contact ">
-            <div class="container-fluid ">
-
-                <div class="section-header ">
-                    <h3>Contact Us</h3>
+        <section id="team">
+            <div class="container">
+                <div class="section-header">
+                    <h3>Team</h3>
+                    <p>Highly Motivated and hard Working Individuals</p>
                 </div>
 
-                <div class="row wow fadeInUp ">
+                <div class="row">
 
-                    <div class="col-lg-6 ">
-                        <div class="map mb-4 mb-lg-0 ">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621
-                        " frameborder="0 " style="border:0; width: 100%; height: 312px; " allowfullscreen></iframe>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp">
+                        <div class="member">
+                            <img src="{% static 'img/team-1.jpg' %}" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Rishabh Kumar</h4>
+                                    <span>Chief Executive Officer</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-6 ">
-                        <div class="row ">
-                            <div class="col-md-5 info ">
-                                <i class="ion-ios-location-outline "></i>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="member">
+                            <img src="{% static 'img/team-2.jpg' %}" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Anukrati Saxena</h4>
+                                    <span>Product Manager</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="member">
+                            <img src="{% static 'img/team-3.jpg' %}" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Prakhar</h4>
+                                    <span>CTO</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="member">
+                            <img src="{% static 'img/team-4.jpg' %}" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Shivang</h4>
+                                    <span>Accountant</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!--==========================
+      Clients Section
+    ============================-->
+
+
+        <section id="contact">
+            <div class="container-fluid">
+
+                <div class="section-header">
+                    <h3>Contact Us</h3>
+                </div>
+
+                <div class="row wow fadeInUp">
+
+                    <div class="col-lg-6">
+                        <div class="map mb-4 mb-lg-0">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0"
+                                style="border:0; width: 100%; height: 312px;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-md-5 info">
+                                <i class="ion-ios-location-outline"></i>
                                 <p>7, Delhi Road, Delhi, India</p>
                             </div>
-                            <div class="col-md-4 info ">
-                                <i class="ion-ios-email-outline "></i>
+                            <div class="col-md-4 info">
+                                <i class="ion-ios-email-outline"></i>
                                 <p>info@example.com</p>
                             </div>
-                            <div class="col-md-3 info ">
-                                <i class="ion-ios-telephone-outline "></i>
+                            <div class="col-md-3 info">
+                                <i class="ion-ios-telephone-outline"></i>
                                 <p>+1 5589 55488 55</p>
                             </div>
                         </div>
 
-                        <div class="form ">
-                            <div id="sendmessage ">Your message has been sent. Thank you!</div>
-                            <div id="errormessage "></div>
-                            <form action=" " method="post " role="form " class="contactForm ">
-                                <div class="form-row ">
-                                    <div class="form-group col-lg-6 ">
-                                        <input type="text " name="name " class="form-control " id="name " placeholder="Your Name " data-rule="minlen:4 " data-msg="Please enter at least 4 chars " />
-                                        <div class="validation "></div>
+                        <div class="form">
+                            <div id="sendmessage">Your message has been sent. Thank you!</div>
+                            <div id="errormessage"></div>
+                            <form action="" method="post" role="form" class="contactForm">
+                                <div class="form-row">
+                                    <div class="form-group col-lg-6">
+                                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                        <div class="validation"></div>
                                     </div>
-                                    <div class="form-group col-lg-6 ">
-                                        <input type="email " class="form-control " name="email " id="email " placeholder="Your Email " data-rule="email " data-msg="Please enter a valid email " />
-                                        <div class="validation "></div>
+                                    <div class="form-group col-lg-6">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                        <div class="validation"></div>
                                     </div>
                                 </div>
-                                <div class="form-group ">
-                                    <input type="text " class="form-control " name="subject " id="subject " placeholder="Subject " data-rule="minlen:4 " data-msg="Please enter at least 8 chars of subject " />
-                                    <div class="validation "></div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                    <div class="validation"></div>
                                 </div>
-                                <div class="form-group ">
-                                    <textarea class="form-control " name="message " rows="5 " data-rule="required " data-msg="Please write something for us " placeholder="Message "></textarea>
-                                    <div class="validation "></div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                                    <div class="validation"></div>
                                 </div>
-                                <div class="text-center "><button type="submit " title="Send Message ">Send Message</button></div>
+                                <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
                             </form>
                         </div>
                     </div>
@@ -645,30 +944,30 @@
     </main>
 
     <!--==========================
-    Footer
-  ============================-->
-    <footer id="footer ">
-        <div class="footer-top ">
-            <div class="container ">
-                <div class="row ">
+      Footer
+    ============================-->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
 
-                    <div class="col-lg-4 col-md-6 footer-info ">
+                    <div class="col-lg-4 col-md-6 footer-info">
                         <h3>Shop-Page</h3>
 
                     </div>
 
-                    <div class="col-lg-2 col-md-6 footer-links ">
+                    <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><a href="# ">Home</a></li>
-                            <li><a href="# ">About us</a></li>
-                            <li><a href="# ">Services</a></li>
-                            <li><a href="# ">Terms of service</a></li>
-                            <li><a href="# ">Privacy policy</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="#">Privacy policy</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-contact ">
+                    <div class="col-lg-3 col-md-6 footer-contact">
                         <h4>Contact Us</h4>
                         <p>
                             7,Delhi Road, Delhi,India<br>
@@ -676,21 +975,21 @@
                             <strong>Email:</strong> info@example.com<br>
                         </p>
 
-                        <div class="social-links ">
-                            <a href="# " class="twitter "><i class="fa fa-twitter "></i></a>
-                            <a href="# " class="facebook "><i class="fa fa-facebook "></i></a>
-                            <a href="# " class="instagram "><i class="fa fa-instagram "></i></a>
-                            <a href="# " class="google-plus "><i class="fa fa-google-plus "></i></a>
-                            <a href="# " class="linkedin "><i class="fa fa-linkedin "></i></a>
+                        <div class="social-links">
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
                         </div>
 
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-newsletter ">
+                    <div class="col-lg-3 col-md-6 footer-newsletter">
                         <h4>Our Newsletter</h4>
                         <p>Subscribe to our Newsletter</p>
-                        <form action=" " method="post ">
-                            <input type="email " name="email "><input type="submit " value="Subscribe ">
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
                         </form>
                     </div>
 
@@ -698,22 +997,23 @@
             </div>
         </div>
 
-        <div class="container ">
-            <div class="copyright ">
+        <div class="container">
+            <div class="copyright">
                 &copy; Copyright <strong>Shoppage</strong>. All Rights Reserved
             </div>
-            <div class="credits ">
+            <div class="credits">
                 <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
-        -->
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=NewBiz
+          -->
                 Designed by Rishabh
             </div>
         </div>
     </footer>
     <!-- #footer -->
+
 
     <a href="# " class="back-to-top "><i class="fa fa-chevron-up "></i></a>
     <!-- Uncomment below i you want to use a preloader -->
